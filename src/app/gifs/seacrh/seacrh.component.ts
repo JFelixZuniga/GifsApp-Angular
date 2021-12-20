@@ -14,6 +14,10 @@ export class SeacrhComponent {
   buscar() {
     const valorBuscado = this.txtBuscar.nativeElement.value;
 
+    if (valorBuscado.trim().length === 0) {
+      return;
+    }
+
     this.gifsService.buscarGifs(valorBuscado);
 
     this.txtBuscar.nativeElement.value = '';
